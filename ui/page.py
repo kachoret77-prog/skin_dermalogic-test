@@ -268,7 +268,7 @@ def render_product_recommendations(result, container):
                 <div class="product-card">
                     <div class="product-tag">추천 제품</div>
                     <div class="product-name">{product["name"]}</div>
-                    <div class="product-reason">추천 이유: 현재 톤 케어 단계와 피부 프로필에 맞춰 선택했어요.</div>
+                    <div class="product-reason">추천 이유: {product.get("reason", "현재 톤 케어 단계와 피부 프로필에 맞춰 선택했어요.")}</div>
                     <div class="product-effect">{product["effect"]}</div>
                     <a class="product-link" href="{product["uri"]}" target="_blank">제품 정보 보기</a>
                 </div>
