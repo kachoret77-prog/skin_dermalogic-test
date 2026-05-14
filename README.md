@@ -4,9 +4,13 @@ CV 기반 피부분석 및 화장품 추천 Streamlit 앱입니다.
 
 ## 구조
 
-- `app.py`: Streamlit UI
+- `app.py`: Streamlit 앱 진입점, 모델 로딩 캐시, 분석 서비스 연결
+- `ui/page.py`: Streamlit 화면 구성, 업로드/결과/추천 영역 렌더링
+- `ui/styles.py`: Streamlit 화면 CSS 테마
+- `ui/settings.py`: 서비스명, 화면 옵션, 프로필 선택값 설정
+- `ui/__init__.py`: `ui` 디렉토리를 파이썬 패키지로 인식시키는 파일
 - `services/cv_service.py`: ResNet18 기반 색소침착 모델 로딩 및 예측
-- `services/result_service.py`: CV 결과를 추천 컨텍스트로 변환
+- `services/result_service.py`: CV 결과를 추천 컨텍스트와 케어 안내 문구로 변환
 - `services/llm_service.py`: 추후 LLM/웹검색 추천 연결 자리, 현재는 고정 추천 반환
 - `utils/config.py`: 모델 경로와 분석 단계 설정
 
@@ -27,6 +31,29 @@ venv\Scripts\streamlit.exe run app.py
 
 ```text
 http://localhost:8501
+```
+
+## 팀원 최신 코드 반영
+
+이미 저장소를 클론한 팀원은 PowerShell에서 프로젝트 폴더로 이동한 뒤 최신 `main`을 가져옵니다.
+
+```powershell
+git checkout main
+git pull origin main
+```
+
+가상환경이 이미 준비되어 있다면 바로 실행합니다.
+
+```powershell
+venv\Scripts\streamlit.exe run app.py
+```
+
+처음 실행하는 환경이라면 가상환경을 만들고 의존성을 설치한 뒤 실행합니다.
+
+```powershell
+python -m venv venv
+venv\Scripts\python.exe -m pip install -r requirements.txt
+venv\Scripts\streamlit.exe run app.py
 ```
 
 ## Streamlit 종료
