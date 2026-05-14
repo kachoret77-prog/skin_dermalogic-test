@@ -41,7 +41,7 @@ def load_skin_model():
 
 def predict_pigmentation(model, image):
     """
-    업로드된 피부 이미지를 모델에 넣고 LLM/추천 서비스가 받기 쉬운 결과 dict를 반환합니다.
+    업로드된 피부 이미지를 모델에 넣고 추천 서비스가 사용하기 쉬운 결과 dict를 반환합니다.
     """
     if not isinstance(image, Image.Image):
         raise TypeError("PIL.Image 형식의 이미지만 분석할 수 있습니다.")

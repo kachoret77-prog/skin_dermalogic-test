@@ -24,7 +24,7 @@ MOCK_PRODUCTS = {
         },
         {
             "name": "토리든 다이브인 저분자 히알루론산 세럼",
-            "effect": "수분 보충과 장벽 보조",
+            "effect": "수분 보탬과 장벽 보조",
             "uri": "https://www.oliveyoung.co.kr/store/search/getSearchMain.do?query=%ED%86%A0%EB%A6%AC%EB%93%A0%20%EB%8B%A4%EC%9D%B4%EB%B8%8C%EC%9D%B8%20%EC%84%B8%EB%9F%BC",
         },
     ],
@@ -36,7 +36,7 @@ MOCK_PRODUCTS = {
         },
         {
             "name": "닥터지 그린 마일드 업 선 플러스",
-            "effect": "민감 피부용 무기자차 자외선 차단",
+            "effect": "민감 피부에 맞춘 무기자차 자외선 차단",
             "uri": "https://www.oliveyoung.co.kr/store/search/getSearchMain.do?query=%EB%8B%A5%ED%84%B0%EC%A7%80%20%EA%B7%B8%EB%A6%B0%20%EB%A7%88%EC%9D%BC%EB%93%9C%20%EC%97%85%20%EC%84%A0",
         },
     ],
@@ -45,8 +45,8 @@ MOCK_PRODUCTS = {
 
 def generate_product_recommendations(cv_context):
     """
-    현재는 LLM이 연결되지 않았으므로 고정 추천을 반환합니다.
-    LLM 연결 시 이 함수 내부의 mock 분기만 실제 웹검색/LLM 호출로 교체하면 됩니다.
+    현재는 고정 추천을 반환합니다.
+    LLM 연결 시 이 함수 내부를 실제 LLM 호출로 교체하면 됩니다.
     """
     if os.getenv(OPENAI_API_KEY_ENV):
         return _generate_with_llm(cv_context)
@@ -59,7 +59,7 @@ def _generate_with_llm(cv_context):
     if client is None:
         return MOCK_PRODUCTS.get(cv_context["level"]["label"], MOCK_PRODUCTS["보통"])
 
-    # TODO: 웹검색 가능한 LLM 연결 후 name/effect/uri만 반환하도록 교체합니다.
+    # TODO: 실제 LLM 연결 시 name/effect/uri를 포함한 제품 리스트를 반환하도록 교체합니다.
     return MOCK_PRODUCTS.get(cv_context["level"]["label"], MOCK_PRODUCTS["보통"])
 
 
