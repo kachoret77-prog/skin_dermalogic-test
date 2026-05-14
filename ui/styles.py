@@ -74,12 +74,48 @@ h1 {
     border-radius: 8px;
     padding: 1rem;
     background: var(--surface);
+    margin-bottom: 0.9rem;
 }
 .soft-panel {
     border: 1px solid #d7f0e9;
     border-radius: 8px;
     padding: 1rem;
     background: var(--soft);
+}
+.result-tone {
+    margin-top: 0.2rem;
+    margin-bottom: 0.9rem;
+}
+.image-column-spacer {
+    height: 0.85rem;
+    border-top: 1px solid var(--line);
+    margin-top: 1rem;
+}
+.notice-panel {
+    border: 1px solid #fde2e7;
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    background: #fff7f8;
+    color: #8a3a47;
+    margin-top: 0.75rem;
+}
+.guide-panel {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1rem;
+    background: #ffffff;
+    margin-top: 0.9rem;
+    margin-bottom: 0.15rem;
+}
+.guide-title {
+    color: var(--ink);
+    font-size: 0.98rem;
+    font-weight: 900;
+    margin-bottom: 0.35rem;
+}
+.guide-text {
+    color: var(--muted);
+    line-height: 1.6;
 }
 .metric-label {
     color: var(--muted);
