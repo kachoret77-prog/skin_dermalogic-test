@@ -303,6 +303,23 @@ h1 {
     line-height: 1.55;
     margin-top: 0.65rem;
 }
+.compare-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 0.95rem 1rem;
+    background: #ffffff;
+    margin-bottom: 0.75rem;
+}
+.compare-row span {
+    min-width: 4.8rem;
+    text-align: right;
+    color: var(--sage-dark);
+    font-weight: 900;
+}
 .small-muted {
     color: var(--muted);
     font-size: 0.92rem;
